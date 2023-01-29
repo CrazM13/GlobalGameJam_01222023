@@ -30,7 +30,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if(controller.isGrounded)
         {
-            velocity.y = -0.5f;
+            velocity.y = -2.5f;
 
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
