@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8768562779727444099}
   - component: {fileID: 4362227639601878467}
   - component: {fileID: 8007195022418469298}
+  - component: {fileID: 6710869659012467093}
   m_Layer: 0
   m_Name: nibbleable_plant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,8 +93,24 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8118779741278420520}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6710869659012467093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118779741278420520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bae7354b3a5d234fa11aad08a5f1dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canNibble: 1
+  maxHealth: 100
+  currentHealth: 0
+  manager: {fileID: 0}
