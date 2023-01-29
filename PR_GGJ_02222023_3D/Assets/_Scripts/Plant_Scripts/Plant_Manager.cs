@@ -31,7 +31,7 @@ public class Plant_Manager : MonoBehaviour
     {
         if (survivingPlants == false)
         {
-            SceneManager.LoadScene(1);
+            ServiceLocator.SceneManager.LoadSceneByName("WinScene");
         }
     }
 
