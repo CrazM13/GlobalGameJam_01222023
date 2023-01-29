@@ -13,8 +13,6 @@ public class Bush : MonoBehaviour {
 		Vector3 scale = transform.localScale * 0.5f;
 		float distanceToCenter = ((normalizedPoint.x * normalizedPoint.x) / (scale.x * scale.x)) + ((normalizedPoint.y * normalizedPoint.y) / (scale.z * scale.z));
 
-		Debug.Log($"{normalizedPoint} | {distanceToCenter}");
-
 		return distanceToCenter <= 1;
 	}
 
