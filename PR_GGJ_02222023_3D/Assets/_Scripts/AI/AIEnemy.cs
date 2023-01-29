@@ -14,6 +14,10 @@ public class AIEnemy : MonoBehaviour {
 
 	[Header("AI Settings")]
 	[SerializeField] private float actionsPerSecond;
+	[SerializeField] private AIVision vision;
+
+	[Header("Temp Stuff")]
+	[SerializeField] private Transform seeTestObject;
 	#endregion
 
 	#region Events
@@ -63,6 +67,11 @@ public class AIEnemy : MonoBehaviour {
 	}
 
 	private void OnStateIdle() {
+		if (vision.CanSeePoint(transform.position, transform.forward, seeTestObject.position)) {
+			SetState(AIStates.CHASE);
+			return;
+		}
+
 		if (timeUntilAction <= 0) {
 			SetState(AIStates.PATROL);
 			MoveToRandomWaypoint();
@@ -70,9 +79,14 @@ public class AIEnemy : MonoBehaviour {
 	}
 
 	private void OnStatePatrol() {
-		if (path != null && path.corners.Length > pathIndex) {
 
-			//targetPosition = path.corners[pathIndex];
+		if (vision.CanSeePoint(transform.position, transform.forward, seeTestObject.position)) {
+			SetState(AIStates.CHASE);
+			path = null;
+			return;
+		}
+
+		if (path != null && path.corners.Length > pathIndex) {
 
 			if (Vector3.Distance(transform.position, path.corners[pathIndex]) < targetWaypointDistance) {
 				pathIndex++;
@@ -91,18 +105,37 @@ public class AIEnemy : MonoBehaviour {
 	}
 
 	private void OnStateChase() {
-		
+		targetPosition = seeTestObject.position;
+
+		if (path != null && path.corners.Length > pathIndex) {
+
+			if (Vector3.Distance(transform.position, path.corners[pathIndex]) < targetWaypointDistance) {
+				if (vision.CanSeePoint(transform.position, transform.forward, seeTestObject.position)) {
+					MoveToTarget();
+				} else {
+					SetState(AIStates.IDLE);
+				}
+			} else {
+				transform.LookAt(Flatten(path.corners[pathIndex]), Vector3.up);
+				transform.position = Vector3.MoveTowards(transform.position, path.corners[pathIndex], chaseSpeed * Time.deltaTime);
+			}
+		} else {
+			MoveToTarget();
+		}
 	}
 
 	private void MoveToRandomWaypoint() {
 		// Set Random Waypoint
 		targetPosition = ServiceLocator.Pathfinder.GetRandomWaypoint();
+		MoveToTarget();
+	}
+
+	private void MoveToTarget() {
 		// Calculate Path
 		path = ServiceLocator.Pathfinder.GetPathToPosition(transform.position, targetPosition);
 
 		//if (path.status == NavMeshPathStatus.PathInvalid) path = null;
-
-		pathIndex = 0;
+		pathIndex = 1;
 	}
 
 	private Vector3 Flatten(Vector3 position) {
@@ -112,6 +145,38 @@ public class AIEnemy : MonoBehaviour {
 	public void SetState(AIStates newState) {
 		OnStateChange.Invoke(newState);
 		currentState = newState;
+	}
+
+	private void OnDrawGizmos() {
+		Color savedColour = Gizmos.color;
+		{
+			Vector3 newPositiveFOVPoint = transform.forward * vision.MaxDistance;
+			newPositiveFOVPoint = Quaternion.AngleAxis(vision.FOV * 0.5f, Vector3.up) * newPositiveFOVPoint;
+			newPositiveFOVPoint += transform.position;
+
+			Vector3 newNegativeFOVPoint = transform.forward * vision.MaxDistance;
+			newNegativeFOVPoint = Quaternion.AngleAxis(vision.FOV * -0.5f, Vector3.up) * newNegativeFOVPoint;
+			newNegativeFOVPoint += transform.position;
+
+			Vector3 newDistanceFOVPoint = transform.forward * vision.MaxDistance;
+			newDistanceFOVPoint += transform.position;
+
+			Gizmos.DrawLine(transform.position, newPositiveFOVPoint);
+			Gizmos.DrawLine(transform.position, newNegativeFOVPoint);
+			Gizmos.DrawLine(newPositiveFOVPoint, newDistanceFOVPoint);
+			Gizmos.DrawLine(newNegativeFOVPoint, newDistanceFOVPoint);
+		}
+
+		{
+			Gizmos.color = Color.green;
+			if (path != null) {
+				for (int i = 1; i < path.corners.Length; i++) {
+					Gizmos.DrawLine(path.corners[i - 1], path.corners[i]);
+				}
+			}
+		}
+
+		Gizmos.color = savedColour;
 	}
 
 }
