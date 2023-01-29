@@ -6,6 +6,7 @@ public class ServiceLocator : MonoBehaviour {
 	// Readonly services
 	public static SceneTransition @SceneManager { get; set; }
 	public static AIPather Pathfinder { get; set; }
+	public static BushManager @BushManager { get; set; }
 
 	// Singleton
 	private static ServiceLocator instance;
@@ -22,12 +23,14 @@ public class ServiceLocator : MonoBehaviour {
 	private void LocateServices() {
 		@SceneManager = FindObjectOfType<SceneTransition>();
 		Pathfinder = new AIPather();
+		@BushManager = new BushManager();
 	}
 
 	private void OnDestroy() {
 		if (instance == this) {
 			@SceneManager = null;
 			Pathfinder = null;
+			@BushManager = null;
 		}
 	}
 }

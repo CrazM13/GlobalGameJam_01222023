@@ -16,6 +16,10 @@ public class AIEnemy : MonoBehaviour {
 	[SerializeField] private float actionsPerSecond;
 	[SerializeField] private AIVision vision;
 
+	[Header("Capture Settings")]
+	[SerializeField] private float captureDistance;
+	[SerializeField] private bool loseOnCapture;
+
 	[Header("Temp Stuff")]
 	[SerializeField] private Transform seeTestObject;
 	#endregion
@@ -106,6 +110,10 @@ public class AIEnemy : MonoBehaviour {
 
 	private void OnStateChase() {
 		targetPosition = seeTestObject.position;
+
+		if (Vector3.Distance(targetPosition, transform.position) < captureDistance) {
+			if (loseOnCapture) ServiceLocator.SceneManager.LoadSceneByName("LoseScene");
+		}
 
 		if (path != null && path.corners.Length > pathIndex) {
 

@@ -9,6 +9,10 @@ public class AIVision {
 	[SerializeField] private float maxDistance = 10;
 
 	public bool CanSeePoint(Vector3 position, Vector3 forward, Vector3 point) {
+
+		// Check if Hidden
+		if (ServiceLocator.BushManager.IsInBush(point)) return false;
+
 		Vector3 direction = point - position;
 
 		float angle = Vector3.Angle(direction, forward);
