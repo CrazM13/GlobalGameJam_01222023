@@ -19,9 +19,6 @@ public class AIEnemy : MonoBehaviour {
 	[Header("Capture Settings")]
 	[SerializeField] private float captureDistance;
 	[SerializeField] private bool loseOnCapture;
-
-	[Header("Temp Stuff")]
-	[SerializeField] private Transform seeTestObject;
 	#endregion
 
 	#region Events
@@ -71,7 +68,7 @@ public class AIEnemy : MonoBehaviour {
 	}
 
 	private void OnStateIdle() {
-		if (vision.CanSeePoint(transform.position, transform.forward, seeTestObject.position)) {
+		if (ServiceLocator.Player && vision.CanSeePoint(transform.position, transform.forward, ServiceLocator.Player.transform.position)) {
 			SetState(AIStates.CHASE);
 			return;
 		}
@@ -84,7 +81,7 @@ public class AIEnemy : MonoBehaviour {
 
 	private void OnStatePatrol() {
 
-		if (vision.CanSeePoint(transform.position, transform.forward, seeTestObject.position)) {
+		if (ServiceLocator.Player && vision.CanSeePoint(transform.position, transform.forward, ServiceLocator.Player.transform.position)) {
 			SetState(AIStates.CHASE);
 			path = null;
 			return;
@@ -109,7 +106,9 @@ public class AIEnemy : MonoBehaviour {
 	}
 
 	private void OnStateChase() {
-		targetPosition = seeTestObject.position;
+		if (!ServiceLocator.Player) SetState(AIStates.IDLE);
+
+		targetPosition = ServiceLocator.Player.transform.position;
 
 		if (Vector3.Distance(targetPosition, transform.position) < captureDistance) {
 			if (loseOnCapture) ServiceLocator.SceneManager.LoadSceneByName("LoseScene");
@@ -118,7 +117,7 @@ public class AIEnemy : MonoBehaviour {
 		if (path != null && path.corners.Length > pathIndex) {
 
 			if (Vector3.Distance(transform.position, path.corners[pathIndex]) < targetWaypointDistance) {
-				if (vision.CanSeePoint(transform.position, transform.forward, seeTestObject.position)) {
+				if (vision.CanSeePoint(transform.position, transform.forward, ServiceLocator.Player.transform.position)) {
 					MoveToTarget();
 				} else {
 					SetState(AIStates.IDLE);
