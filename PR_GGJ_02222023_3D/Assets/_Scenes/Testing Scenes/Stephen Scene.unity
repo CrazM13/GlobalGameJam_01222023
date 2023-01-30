@@ -854,6 +854,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Third Person Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5320208258276675272, guid: 0285e136a4dda7f409ad56c71d4d1e05,
+        type: 3}
+      propertyPath: m_IgnoreTag
+      value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320208258276675272, guid: 0285e136a4dda7f409ad56c71d4d1e05,
+        type: 3}
+      propertyPath: m_CollideAgainst.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5320208258276675274, guid: 0285e136a4dda7f409ad56c71d4d1e05,
         type: 3}
       propertyPath: m_Follow
