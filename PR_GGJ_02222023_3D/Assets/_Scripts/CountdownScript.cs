@@ -32,7 +32,6 @@ public class CountdownScript : MonoBehaviour
             doOnce = true;
             wiText.text = "0.00";
             timer = 0.0f;
-
         }
     }
 
@@ -41,6 +40,11 @@ public class CountdownScript : MonoBehaviour
         timer = mainTimer;
         canCount = true;
         doOnce=false;
+    }
+
+    void GameOver()
+    {
+        //Load a new Scene
     }
                     
 }
