@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
     public Transform groundCheck;
     public LayerMask groundMask;
+
+    public Text pauseLabel;
+    public static bool isPaused;
+    float previousTimescale = 1;
+    public AudioSource audioSource;
 
     public float speed = 6f;
     public float jump = 2.5f;
@@ -22,6 +28,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private bool isGrounded; 
 
     public float turnSmoothTime = 0.1f;
+      
 
     // Update is called once per frame
     void Update()
@@ -39,6 +46,8 @@ public class ThirdPersonMovement : MonoBehaviour
             }
 
             StartCooldown();
+
+           
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -61,6 +70,11 @@ public class ThirdPersonMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TogglePause();
+        }
+
     }
 
     public IEnumerable StartCooldown()
@@ -68,6 +82,33 @@ public class ThirdPersonMovement : MonoBehaviour
         isGrounded = false;
         yield return new WaitForSeconds(jumpCooldown);
         isGrounded = true;
+    }
+
+    void TogglePause()
+    {
+        if (Time.timeScale > 0)
+        {
+            previousTimescale = Time.timeScale;
+            Time.timeScale = 0;
+            AudioListener.pause = true;
+            pauseLabel.enabled = true;
+
+            isPaused = true;
+          
+        }
+
+        else if (Time.timeScale == 0)
+        {
+            Debug.Log("p is hit");
+
+            Time.timeScale = previousTimescale;
+            AudioListener.pause = false;
+            pauseLabel.enabled = false;
+
+            isPaused = false;
+
+           
+        }
     }
 }
  
