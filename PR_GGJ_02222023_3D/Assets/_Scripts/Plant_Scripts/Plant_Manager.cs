@@ -39,4 +39,8 @@ public class Plant_Manager : MonoBehaviour
     {
         plants.Remove(gameObject);
     }
+    public int remainingPlantCount()
+    {
+        return plants.Count;
+    }
 }
