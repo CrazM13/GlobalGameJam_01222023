@@ -7,6 +7,7 @@ public class Plant_Manager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] List<GameObject> plants;
+    [SerializeField] int totalPlants;
     [SerializeField] bool survivingPlants;
     void Start()
     {
@@ -14,6 +15,7 @@ public class Plant_Manager : MonoBehaviour
         if (plants.Count > 0)
         {
             survivingPlants = true;
+            totalPlants = plants.Count;
         }
     }
 
@@ -42,5 +44,9 @@ public class Plant_Manager : MonoBehaviour
     public int remainingPlantCount()
     {
         return plants.Count;
+    }
+    public int totalPlantCount()
+    {
+        return totalPlants;
     }
 }
