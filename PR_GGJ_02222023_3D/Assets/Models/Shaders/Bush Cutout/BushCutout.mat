@@ -33,6 +33,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: e3b18c84b356b8048a622cfdc94dd34b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Cutout_372bc3bfee324467ad76a7c448cd15f6_CutoutTexture_14200413:
+        m_Texture: {fileID: 2800000, guid: e3b18c84b356b8048a622cfdc94dd34b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cutout_3920b323488e421a9531d6e2ccc701ca_CutoutTexture_14200413:
+        m_Texture: {fileID: 2800000, guid: e3b18c84b356b8048a622cfdc94dd34b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -102,6 +110,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _IsCutoutActive: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -117,9 +126,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CutoutPosition: {r: 1, g: 0.3, b: 0, a: 0}
-    - _CutoutScale: {r: 3.5, g: 3.5, b: 0, a: 0}
+    - _Color: {r: 0, g: 1, b: 0.052033424, a: 1}
+    - _CutoutPosition: {r: 0.99, g: 0.3, b: 0, a: 0}
+    - _CutoutScale: {r: 0.3, g: 0.3, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
