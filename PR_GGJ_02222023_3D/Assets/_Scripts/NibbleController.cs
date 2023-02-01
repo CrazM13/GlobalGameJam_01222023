@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NibbleController : MonoBehaviour {
 
+	public int dmg;
 	// Update is called once per frame
 	void Update() {
 		if (Input.GetButtonDown("Fire1")) {
@@ -11,7 +12,7 @@ public class NibbleController : MonoBehaviour {
 				Nibbleable_Object nibbleable = hit.collider.GetComponent<Nibbleable_Object>();
 
 				if (nibbleable) {
-					nibbleable.gettingNibbled(100);
+					nibbleable.gettingNibbled(dmg);
 				}
 			}
 		}
