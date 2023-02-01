@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Bush : MonoBehaviour {
 
+	private const string CUTOUT_ID = "_IsCutoutActive";
+
+	private new MeshRenderer renderer;
+
+	private bool isCutoutShown = false;
+
 	void Awake() {
 		ServiceLocator.BushManager.AddBush(this);
+
+		renderer = GetComponent<MeshRenderer>();
 	}
 
 	public bool IsInBush(Vector3 point) {
@@ -20,9 +28,12 @@ public class Bush : MonoBehaviour {
 		return new Vector2(position.x - transform.position.x, position.z - transform.position.z);
 	}
 
-	private void OnDrawGizmosSelected() {
-		Gizmos.DrawLine(transform.position - transform.forward * transform.localScale.z, transform.position + transform.forward * transform.localScale.z);
-		Gizmos.DrawLine(transform.position - transform.right * transform.localScale.x, transform.position + transform.right * transform.localScale.x);
+	public void ShowCutout(bool shouldShow) {
+		if (isCutoutShown != shouldShow) {
+			isCutoutShown = shouldShow;
+
+			if (renderer) renderer.material.SetInt(CUTOUT_ID, shouldShow ? 1 : 0);
+		}
 	}
 
 }

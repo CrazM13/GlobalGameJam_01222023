@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class HideableVisualizer : MonoBehaviour {
 
-	[SerializeField] private new MeshRenderer renderer;
+	private bool isHidden = false;
 
 	void Update() {
-		bool isHidden = ServiceLocator.BushManager.IsInBush(transform.position);
+		bool newIsHidden = ServiceLocator.BushManager.IsInBush(transform.position);
 
-		renderer.material.color = isHidden ? Color.grey : Color.white;
+		if (newIsHidden != isHidden) {
+			ServiceLocator.BushManager.UpdateCutoutsOnBushes(transform.position);
+			isHidden = newIsHidden;
+		}
 	}
 }

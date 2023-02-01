@@ -21,4 +21,10 @@ public class BushManager {
 
 		return false;
 	}
+
+	public void UpdateCutoutsOnBushes(Vector3 focusPoint) {
+		foreach (Bush bush in bushes) {
+			bush.ShowCutout(bush.IsInBush(focusPoint));
+		}
+	}
 }
