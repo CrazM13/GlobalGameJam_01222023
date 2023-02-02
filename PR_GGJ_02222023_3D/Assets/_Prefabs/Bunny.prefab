@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 370673041772241168}
   - component: {fileID: 370673041772241169}
   - component: {fileID: 7634155278238230670}
+  - component: {fileID: 8346474640865605628}
   m_Layer: 0
   m_Name: Bunny
   m_TagString: Untagged
@@ -305,3 +306,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578ab64eabe715c4b83b9b321b9ad05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8346474640865605628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370673041772241171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3ee8b573e77049ac8bfb814685b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vignette: {fileID: -717631669924003969, guid: c40be3174f62c4acf8c1216858c64956,
+    type: 2}
+  dangerDistance: 20
