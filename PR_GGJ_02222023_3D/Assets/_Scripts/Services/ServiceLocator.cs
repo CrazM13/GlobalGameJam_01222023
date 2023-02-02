@@ -8,6 +8,7 @@ public class ServiceLocator : MonoBehaviour {
 	public static AIPather Pathfinder { get; set; }
 	public static BushManager @BushManager { get; set; }
 	public static ThirdPersonMovement Player { get; set; }
+	public static CatchingManager @CatchingManager { get; set; }
 
 	// Singleton
 	private static ServiceLocator instance;
@@ -26,6 +27,7 @@ public class ServiceLocator : MonoBehaviour {
 		Pathfinder = new AIPather();
 		@BushManager = new BushManager();
 		Player = FindObjectOfType<ThirdPersonMovement>();
+		@CatchingManager = new CatchingManager(3);
 	}
 
 	private void OnDestroy() {
@@ -34,6 +36,7 @@ public class ServiceLocator : MonoBehaviour {
 			Pathfinder = null;
 			@BushManager = null;
 			Player = null;
+			@CatchingManager = null;
 		}
 	}
 }

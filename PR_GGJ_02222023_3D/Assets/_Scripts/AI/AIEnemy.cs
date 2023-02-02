@@ -18,7 +18,6 @@ public class AIEnemy : MonoBehaviour {
 
 	[Header("Capture Settings")]
 	[SerializeField] private float captureDistance;
-	[SerializeField] private bool loseOnCapture;
 	#endregion
 
 	#region Events
@@ -111,7 +110,7 @@ public class AIEnemy : MonoBehaviour {
 		targetPosition = ServiceLocator.Player.transform.position;
 
 		if (Vector3.Distance(targetPosition, transform.position) < captureDistance) {
-			if (loseOnCapture) ServiceLocator.SceneManager.LoadSceneByName("LoseScene");
+			ServiceLocator.CatchingManager.CatchRabbit();
 		}
 
 		if (path != null && path.corners.Length > pathIndex) {
