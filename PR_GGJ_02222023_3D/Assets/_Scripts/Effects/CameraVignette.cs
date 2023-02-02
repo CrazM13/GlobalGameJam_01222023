@@ -18,9 +18,11 @@ public class CameraVignette : ScriptableRendererFeature {
 		public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData) {
 			CommandBuffer cmd = CommandBufferPool.Get(name: "CameraVignettePass");
 
-			cmd.SetViewProjectionMatrices(Matrix4x4.identity, Matrix4x4.identity);
+			Camera camera = renderingData.cameraData.camera;
 
-			cmd.DrawMesh(this.mesh, Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(2, 2, 1)), this.material, 0, 0);
+			//cmd.SetViewProjectionMatrices(Matrix4x4.identity, Matrix4x4.identity);
+
+			cmd.DrawMesh(this.mesh, Matrix4x4.TRS(camera.transform.position + camera.transform.forward, camera.transform.rotation, new Vector3(3, 3, 1)), this.material, 0, 0);
 			context.ExecuteCommandBuffer(cmd);
 
 			CommandBufferPool.Release(cmd);
