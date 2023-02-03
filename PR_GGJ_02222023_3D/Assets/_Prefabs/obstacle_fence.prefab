@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9100710715036379159}
   - component: {fileID: 7002479393067393381}
   - component: {fileID: 4997739720949011357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obstacle_fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,6 +247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obsticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106905502232840438, guid: 878ed103c3d32df448fc65b413e85d60,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 878ed103c3d32df448fc65b413e85d60, type: 3}
