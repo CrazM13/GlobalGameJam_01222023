@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CatchingManager {
 
@@ -12,7 +13,12 @@ public class CatchingManager {
 
 	private float Completion => 1 - ((float) ServiceLocator.PlantManager.remainingPlantCount() / ServiceLocator.PlantManager.totalPlantCount());
 
-	public bool IsLastLife => currentLife >= maxLives && Completion >= 0.75f;
+	public bool IsLastLife => currentLife >= maxLives || Completion >= 0.75f;
+
+	public int RemainingLives => maxLives - currentLife;
+	public int CurrentLife => currentLife;
+
+	public UnityEvent<CatchingManager> OnPlayerCaught { get; set; } = new UnityEvent<CatchingManager>();
 
 	public CatchingManager(int maxLives) {
 		this.maxLives = maxLives;
@@ -25,6 +31,8 @@ public class CatchingManager {
 		} else {
 			ServiceLocator.SceneManager.LoadSceneByName("LoseScene");
 		}
+
+		OnPlayerCaught.Invoke(this);
 	}
 
 	public void SetRespawnPoint(RespawnPoint respawnPoint) {

@@ -38,7 +38,7 @@ public class AIDialog : MonoBehaviour {
 			timeUntilIdleLine -= Time.deltaTime;
 			if (timeUntilIdleLine <= 0) {
 				Play(GetRandom(idleLines, lastIdleIndex));
-				timeUntilIdleLine = idleLineDelay;
+				timeUntilIdleLine = idleLineDelay * Random.Range(1, 1.4f);
 			}
 		}
 	}
