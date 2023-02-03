@@ -10,9 +10,13 @@ public class ShakeOnNibble : MonoBehaviour {
 
 	private float playTime = -1;
 
+	private Vector3 startEulers;
+
 	// Start is called before the first frame update
 	void Start() {
 		// Hook into event
+
+		startEulers = transform.rotation.eulerAngles;
 	}
 
 	// Update is called once per frame
@@ -20,7 +24,7 @@ public class ShakeOnNibble : MonoBehaviour {
 		if (playTime >= 0) {
 			playTime += Time.deltaTime * speed;
 
-			transform.rotation = Quaternion.Euler(rotationOverTime.Evaluate(playTime) * scale, 0, 0);
+			transform.rotation = Quaternion.Euler(startEulers.x + rotationOverTime.Evaluate(playTime) * scale, startEulers.y, startEulers.z);
 
 			if (playTime > 1) Stop();
 		}
@@ -28,7 +32,7 @@ public class ShakeOnNibble : MonoBehaviour {
 
 	private void Stop() {
 		playTime = -1;
-		transform.rotation = Quaternion.identity;
+		transform.rotation = Quaternion.Euler(startEulers);
 	}
 
 	[ContextMenu("Play")]
