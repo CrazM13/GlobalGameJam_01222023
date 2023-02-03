@@ -74,7 +74,14 @@ public class LineHelper : MonoBehaviour {
 
 			if (arrowIndex < maxArrowCount) {
 				arrows[arrowIndex].SetActive(true);
-				arrows[arrowIndex].transform.SetPositionAndRotation(Vector3.Lerp(path.corners[pathSegment], endPoint, percentage * i), Quaternion.LookRotation(endPoint - arrows[arrowIndex].transform.position, Vector3.up));
+
+				Vector3 newPosition = Vector3.Lerp(path.corners[pathSegment], endPoint, percentage * i);
+
+				if (NavMesh.SamplePosition(newPosition, out NavMeshHit hit, 1, -1)) {
+					newPosition = hit.position;
+				}
+
+				arrows[arrowIndex].transform.SetPositionAndRotation(newPosition + offset, Quaternion.LookRotation(endPoint - arrows[arrowIndex].transform.position, Vector3.up));
 
 				arrowIndex++;
 			}
