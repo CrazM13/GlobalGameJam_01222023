@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -370,6 +370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -1315,6 +1320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -1464,6 +1474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -1684,6 +1699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -1809,15 +1829,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 685714362620139115, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
+        type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1486446960364172684, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015896623
+      value: 0.000000015896623
       objectReference: {fileID: 0}
     - target: {fileID: 1486446960364172684, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000065845964
+      value: -0.0000000065845964
       objectReference: {fileID: 0}
     - target: {fileID: 2752736602301172994, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
@@ -1847,12 +1872,12 @@ PrefabInstance:
     - target: {fileID: 2955772598384839434, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000022646878
+      value: 0.000000022646882
       objectReference: {fileID: 0}
     - target: {fileID: 2955772598384839434, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000008901563
+      value: -0.000000008901565
       objectReference: {fileID: 0}
     - target: {fileID: 3874797814054695809, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
@@ -1882,12 +1907,17 @@ PrefabInstance:
     - target: {fileID: 3874797814054695809, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000004529376
+      value: 0.000000045293763
       objectReference: {fileID: 0}
     - target: {fileID: 3874797814054695809, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000017803126
+      value: -0.000000017803128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874797814621061776, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
+        type: 3}
+      propertyPath: m_CollideAgainst.m_Bits
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3874797814621061778, guid: 96b9d6ea5098abc40b9d2e4d13dc10bb,
         type: 3}
@@ -2086,6 +2116,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2262,6 +2297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2336,6 +2376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (05)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -2486,6 +2531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -3088,7 +3138,7 @@ GameObject:
   - component: {fileID: 899372389}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3261,6 +3311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -3526,6 +3581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -4051,6 +4111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -4582,6 +4647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -4881,6 +4951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -5204,6 +5279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -6472,6 +6552,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -6927,6 +7012,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_fence (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -7001,6 +7091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
@@ -7226,6 +7321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_fence (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 376413562002814928, guid: 46aa6afee51b46548a634b4819bb39b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
         type: 3}
