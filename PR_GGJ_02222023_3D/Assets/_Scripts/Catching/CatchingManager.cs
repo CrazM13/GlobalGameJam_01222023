@@ -12,13 +12,15 @@ public class CatchingManager {
 
 	private float Completion => 1 - ((float) ServiceLocator.PlantManager.remainingPlantCount() / ServiceLocator.PlantManager.totalPlantCount());
 
+	public bool IsLastLife => currentLife >= maxLives && Completion >= 0.75f;
+
 	public CatchingManager(int maxLives) {
 		this.maxLives = maxLives;
 	}
 
 	public void CatchRabbit() {
 		currentLife++;
-		if (respawnPoint && currentLife < maxLives && Completion < 0.75f) {
+		if (respawnPoint && !IsLastLife) {
 			Respawn();
 		} else {
 			ServiceLocator.SceneManager.LoadSceneByName("LoseScene");

@@ -109,6 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2703732575384653913}
   - component: {fileID: 2703732575384653912}
+  - component: {fileID: 5260440586556995083}
   m_Layer: 0
   m_Name: AIEnemy
   m_TagString: Untagged
@@ -152,7 +153,37 @@ MonoBehaviour:
     fov: 89.1
     maxDistance: 10.06
   captureDistance: 2
-  loseOnCapture: 1
+--- !u!114 &5260440586556995083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703732575384653895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093ab4f3ab03a824bb720c0ca481b75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetEnemy: {fileID: 2703732575384653912}
+  idleLineDelay: 10
+  idleLines:
+  - {fileID: 8300000, guid: 592dd9afb0a683f49afb004eebb560f6, type: 3}
+  - {fileID: 8300000, guid: 6eab48d05c5599c408a99f57440f721f, type: 3}
+  - {fileID: 8300000, guid: 642a2efda0b34304c8be2ad362030ba9, type: 3}
+  - {fileID: 8300000, guid: 83c741bc91c40b34799465fa2aa2730a, type: 3}
+  - {fileID: 8300000, guid: faa008b00c35e844d81925ecfc6fbd31, type: 3}
+  - {fileID: 8300000, guid: 80ce57894e3d4af4388fc0312a3a00f9, type: 3}
+  - {fileID: 8300000, guid: abbaf13798cd6f046b304daa299dc4ca, type: 3}
+  - {fileID: 8300000, guid: f65c403539a50d0448588a3babc24ac9, type: 3}
+  - {fileID: 8300000, guid: 6b10b12c827cd0348ad67f277414854d, type: 3}
+  - {fileID: 8300000, guid: d6e17297e64645a4486f3afe429038b8, type: 3}
+  - {fileID: 8300000, guid: f77a63ae179940449892b7967045253a, type: 3}
+  sightLines:
+  - {fileID: 8300000, guid: 2be3262260f3c4f4d94eff59ac7327b3, type: 3}
+  - {fileID: 8300000, guid: d5ffb47266f4371489bf675945868018, type: 3}
+  violentLines:
+  - {fileID: 8300000, guid: 966043761f6f05747a14a092450b8e39, type: 3}
 --- !u!1 &2703732576000108413
 GameObject:
   m_ObjectHideFlags: 0

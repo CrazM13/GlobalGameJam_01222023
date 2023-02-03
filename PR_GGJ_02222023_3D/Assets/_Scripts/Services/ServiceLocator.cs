@@ -10,6 +10,7 @@ public class ServiceLocator : MonoBehaviour {
 	public static ThirdPersonMovement Player { get; set; }
 	public static CatchingManager @CatchingManager { get; set; }
 	public static Plant_Manager PlantManager { get; set; }
+	public static AudioManager @AudioManager { get; set; }
 
 	// Singleton
 	private static ServiceLocator instance;
@@ -30,6 +31,7 @@ public class ServiceLocator : MonoBehaviour {
 		Player = FindObjectOfType<ThirdPersonMovement>();
 		@CatchingManager = new CatchingManager(3);
 		PlantManager = FindObjectOfType<Plant_Manager>();
+		@AudioManager = new AudioManager();
 	}
 
 	private void OnDestroy() {
@@ -40,6 +42,7 @@ public class ServiceLocator : MonoBehaviour {
 			Player = null;
 			@CatchingManager = null;
 			PlantManager = null;
+			@AudioManager = null;
 		}
 	}
 }
