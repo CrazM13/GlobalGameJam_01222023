@@ -50,4 +50,10 @@ public class CameraVignetteController : MonoBehaviour {
 
 		return closestDistance;
 	}
+
+	private void OnDestroy() {
+		vignette.IsEffectActive = false;
+		vignette.Strength = 1;
+		vignette.Scale = 1;
+	}
 }

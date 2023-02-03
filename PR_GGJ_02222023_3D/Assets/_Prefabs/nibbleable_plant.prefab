@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4362227639601878467}
   - component: {fileID: 8007195022418469298}
   - component: {fileID: 6710869659012467093}
+  - component: {fileID: 7441250778704957160}
   m_Layer: 0
   m_Name: nibbleable_plant
   m_TagString: Plant
@@ -114,3 +115,68 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   manager: {fileID: 0}
+--- !u!114 &7441250778704957160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118779741278420520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad4e0cb2752c4f4786406da21f5d787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOverTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.209513
+      outSlope: 2.209513
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13568555
+    - serializedVersion: 3
+      time: 0.25
+      value: 0
+      inSlope: 13.687676
+      outSlope: 13.687676
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.050593555
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: -1.4710966
+      outSlope: -1.4710966
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10369784
+      outWeight: 0.21854949
+    - serializedVersion: 3
+      time: 0.75
+      value: 0
+      inSlope: 2.5214038
+      outSlope: 2.5214038
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1904649
+    - serializedVersion: 3
+      time: 1.0021973
+      value: 0
+      inSlope: 1.2849634
+      outSlope: 1.2849634
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16420624
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  speed: 1
+  scale: 25
