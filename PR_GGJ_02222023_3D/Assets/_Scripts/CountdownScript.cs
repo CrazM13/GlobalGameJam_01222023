@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CountdownScript : MonoBehaviour
 {
 
-    [SerializeField] private Text wiText;
+    [SerializeField] private TMPro.TMP_Text wiText;
     [SerializeField] private float mainTimer;
 
     private float timer;
