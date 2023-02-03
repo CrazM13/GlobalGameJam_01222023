@@ -28,7 +28,11 @@ public class ThirdPersonMovement : MonoBehaviour
     private bool isGrounded; 
 
     public float turnSmoothTime = 0.1f;
-      
+
+	private Vector3 frameVelocity = Vector3.zero;
+	public bool IsMoving => frameVelocity.x != 0 || frameVelocity.z != 0;
+
+	public bool IsGrounded => controller.isGrounded && isGrounded;
 
     // Update is called once per frame
     void Update()
@@ -61,11 +65,13 @@ public class ThirdPersonMovement : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+			frameVelocity = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-            controller.Move(moveDir* speed * Time.deltaTime);
+            controller.Move(frameVelocity * speed * Time.deltaTime);
 
-        }
+        } else if (IsMoving) {
+			frameVelocity = Vector3.zero;
+		}
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
