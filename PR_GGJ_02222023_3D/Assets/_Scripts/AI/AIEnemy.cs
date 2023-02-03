@@ -37,6 +37,8 @@ public class AIEnemy : MonoBehaviour {
 
 	private float ActionSpeed => 1f / actionsPerSecond;
 
+	public bool IsMoving => path != null;
+
 	// Start is called before the first frame update
 	void Awake() {
 		SetState(AIStates.IDLE);
