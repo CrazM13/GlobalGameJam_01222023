@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2703732575384653913}
   - component: {fileID: 2703732575384653912}
   - component: {fileID: 5260440586556995083}
+  - component: {fileID: 5582141316486792745}
+  - component: {fileID: 447549068818750883}
   m_Layer: 0
   m_Name: AIEnemy
   m_TagString: Untagged
@@ -85,6 +87,37 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d5ffb47266f4371489bf675945868018, type: 3}
   violentLines:
   - {fileID: 8300000, guid: 966043761f6f05747a14a092450b8e39, type: 3}
+--- !u!114 &5582141316486792745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703732575384653895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bae7354b3a5d234fa11aad08a5f1dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canNibble: 1
+  maxHealth: 99999999
+  currentHealth: 0
+  manager: {fileID: 0}
+  PE: []
+--- !u!136 &447549068818750883
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703732575384653895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1001 &6843428093600494909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,20 +208,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6843428093600494909}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5149006849494795247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5925000182716516460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f169c9243fed0b84e9fdd0b6332f2e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmerAnimController: {fileID: 7929634075406983836}
-  farmer: {fileID: 2703732575384653912}
 --- !u!95 &7929634075406983836
 Animator:
   serializedVersion: 5
@@ -209,6 +228,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5149006849494795247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925000182716516460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f169c9243fed0b84e9fdd0b6332f2e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmerAnimController: {fileID: 7929634075406983836}
+  farmer: {fileID: 2703732575384653912}
 --- !u!4 &6445219422645850838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 319eccf8700cded4a957b5b2208c2d8e,

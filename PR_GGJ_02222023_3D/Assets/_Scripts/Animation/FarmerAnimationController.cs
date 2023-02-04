@@ -14,6 +14,7 @@ public class FarmerAnimationController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		farmerAnimController.SetBool("IsMoving", farmer.IsMoving);
+		farmerAnimController.SetBool("Dance", farmer.IsStunned);
+		farmerAnimController.SetBool("IsMoving", !farmer.IsStunned && farmer.IsMoving);
 	}
 }

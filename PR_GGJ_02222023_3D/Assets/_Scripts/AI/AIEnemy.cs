@@ -33,22 +33,29 @@ public class AIEnemy : MonoBehaviour {
 	private NavMeshPath path;
 	private int pathIndex;
 
+	private float stunDuration = 0;
 	private float timeUntilAction = 0;
 
 	private float ActionSpeed => 1f / actionsPerSecond;
 
 	public bool IsMoving => path != null;
+	public bool IsStunned => stunDuration > 0;
 
 	// Start is called before the first frame update
 	void Awake() {
 		SetState(AIStates.IDLE);
 		timeUntilAction = ActionSpeed;
+
+		Nibbleable_Object nibbleObject = GetComponent<Nibbleable_Object>();
+		nibbleObject.OnNibbleStart.AddListener(OnNibble);
+		nibbleObject.OnNibbleContinue.AddListener(OnNibble);
 	}
 
 	// Update is called once per frame
 	void Update() {
 
-		timeUntilAction -= Time.deltaTime;
+		if (stunDuration <= 0) timeUntilAction -= Time.deltaTime;
+		else stunDuration -= Time.deltaTime;
 
 		switch (currentState) {
 			case AIStates.IDLE:
@@ -154,6 +161,18 @@ public class AIEnemy : MonoBehaviour {
 		currentState = newState;
 	}
 
+	private void Stun(float duration) {
+		if (currentState != AIStates.IDLE) SetState(AIStates.IDLE);
+		stunDuration = duration;
+	}
+
+	private void OnNibble() {
+		Debug.Log("NIBBLED");
+		Stun(5f);
+
+		GetComponent<Nibbleable_Object>().resetFarmerHP();
+	}
+	
 	private void OnDrawGizmos() {
 		Color savedColour = Gizmos.color;
 		{
