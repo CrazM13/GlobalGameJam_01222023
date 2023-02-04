@@ -6,20 +6,17 @@ public class MouseLock : MonoBehaviour
 {
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown("1"))
-        {
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = false;
-        }
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
 
-        if (Input.GetKeyDown("2"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;
+		ServiceLocator.SceneManager.OnSceneUnloaded.AddListener(() =>
+			{
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+			}
+		);
 
-        }
-       
     }
 }

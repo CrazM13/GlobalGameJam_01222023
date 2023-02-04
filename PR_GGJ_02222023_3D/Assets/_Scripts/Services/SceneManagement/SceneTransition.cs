@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour {
@@ -14,6 +15,8 @@ public class SceneTransition : MonoBehaviour {
 	private float delayTime;
 	private float timeUntilFinished;
 	private string changeToScene = "";
+
+	public UnityEvent OnSceneUnloaded { get; set; } = new UnityEvent();
 
 	void Awake() {
 		canvas.blocksRaycasts = true;
@@ -45,6 +48,7 @@ public class SceneTransition : MonoBehaviour {
 				if (timeUntilFinished <= 0) {
 					Time.timeScale = 1;
 					if (!string.IsNullOrEmpty(changeToScene)) {
+						OnSceneUnloaded.Invoke();
 						SceneManager.LoadScene(changeToScene);
 						timeUntilFinished = animationTime;
 						changeToScene = "";

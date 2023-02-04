@@ -105,7 +105,12 @@ public class AIEnemy : MonoBehaviour {
 				}
 			} else {
 				transform.LookAt(Flatten(path.corners[pathIndex]), Vector3.up);
-				transform.position = Vector3.MoveTowards(transform.position, path.corners[pathIndex], movementSpeed * Time.deltaTime);
+				
+				Vector3 newPositon = Vector3.MoveTowards(transform.position, path.corners[pathIndex], movementSpeed * Time.deltaTime);
+				if (NavMesh.SamplePosition(newPositon, out NavMeshHit hit, 1, -1)) {
+					newPositon = hit.position;
+				}
+				transform.position = newPositon;
 			}
 		} else {
 			SetState(AIStates.IDLE);
