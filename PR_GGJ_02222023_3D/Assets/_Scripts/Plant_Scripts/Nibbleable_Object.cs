@@ -24,19 +24,6 @@ public class Nibbleable_Object : MonoBehaviour
             PE.Add(this.transform.GetChild(i).GetComponent<ParticleSystem>());
         }
     }
-    private void Update()
-    {
-        if (currentHealth <= 0)
-        {
-            for(int i = 0; i < PE.Count; i++)
-            {
-                PE[i].Play();
-            }
-            canNibble = false;
-            manager.GetComponent<Plant_Manager>().removePlant(this.gameObject);
-            Object.Destroy(this.gameObject, 1);
-        }
-    }
 
     public void resetFarmerHP()
     {
