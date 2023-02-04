@@ -13,7 +13,7 @@ public class Bush : MonoBehaviour {
 	void Awake() {
 		ServiceLocator.BushManager.AddBush(this);
 
-		renderer = GetComponent<MeshRenderer>();
+		renderer = GetComponentInChildren<MeshRenderer>();
 	}
 
 	public bool IsInBush(Vector3 point) {
@@ -32,7 +32,12 @@ public class Bush : MonoBehaviour {
 		if (isCutoutShown != shouldShow) {
 			isCutoutShown = shouldShow;
 
-			if (renderer) renderer.material.SetInt(CUTOUT_ID, shouldShow ? 1 : 0);
+			if (renderer) {
+				foreach (Material mat in renderer.materials) {
+					mat.SetInt(CUTOUT_ID, shouldShow ? 1 : 0);
+				}
+			}
+
 		}
 	}
 

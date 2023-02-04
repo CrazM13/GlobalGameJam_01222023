@@ -7,16 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: leaf
-  m_Shader: {fileID: -6465566751694194690, guid: 5044ca2fb64ae8a4ba6dfbbdc434476e,
-    type: 3}
+  m_Name: Material.002
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -27,14 +27,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cutout_372bc3bfee324467ad76a7c448cd15f6_CutoutTexture_14200413:
-        m_Texture: {fileID: 2800000, guid: e3b18c84b356b8048a622cfdc94dd34b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cutout_3920b323488e421a9531d6e2ccc701ca_CutoutTexture_14200413:
-        m_Texture: {fileID: 2800000, guid: e3b18c84b356b8048a622cfdc94dd34b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -73,10 +65,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -103,17 +91,15 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.590909
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IsCutoutActive: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.590909
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -122,14 +108,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.3148871, b: 0.028803939, a: 1}
-    - _Color: {r: 0, g: 0.31488708, b: 0.028803939, a: 1}
-    - _CutoutPosition: {r: 0.99, g: 0.3, b: 0, a: 0}
-    - _CutoutScale: {r: 0.3, g: 0.3, b: 0, a: 0}
+    - _BaseColor: {r: 0.31506202, g: 0.9063317, b: 0.12672177, a: 1}
+    - _Color: {r: 0.315062, g: 0.9063317, b: 0.12672174, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8549181281709397787
+--- !u!114 &3331491389506747847
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
