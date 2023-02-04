@@ -15,6 +15,9 @@ public class ShakeOnNibble : MonoBehaviour {
 	// Start is called before the first frame update
 	void Start() {
 		// Hook into event
+		Nibbleable_Object nibbleableObject = GetComponent<Nibbleable_Object>();
+		nibbleableObject.OnNibbleStart.AddListener(Play);
+		nibbleableObject.OnNibbleContinue.AddListener(Play);
 
 		startEulers = transform.rotation.eulerAngles;
 	}
