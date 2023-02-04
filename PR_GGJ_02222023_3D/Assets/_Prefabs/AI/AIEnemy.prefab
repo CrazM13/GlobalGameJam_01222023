@@ -53,8 +53,8 @@ MonoBehaviour:
   targetWaypointDistance: 0.25
   actionsPerSecond: 0.25
   vision:
-    fov: 89.1
-    maxDistance: 10.06
+    fov: 196.07
+    maxDistance: 22.1
   captureDistance: 2
 --- !u!114 &5260440586556995083
 MonoBehaviour:
