@@ -54,12 +54,13 @@ public class Nibbleable_Object : MonoBehaviour
             if (currentHealth <= 0)
             {
                 OnNibbleEnd.Invoke();
-                for (int i = 0; i < PE.Count; i++)
-                {
-                    PE[i].Play();
+                if(PE.Count > 0) {
+                    for (int i = 0; i < PE.Count; i++)
+                    {
+                        PE[i].Play();
+                    }
                 }
                 canNibble = false;
-                //this.gameObject.SetActive(false);
 				manager.GetComponent<Plant_Manager>().removePlant(this.gameObject);
 				Object.Destroy(this.gameObject, 1);
             }
