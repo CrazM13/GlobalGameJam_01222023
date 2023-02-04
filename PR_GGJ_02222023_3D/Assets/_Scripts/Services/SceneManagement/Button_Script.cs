@@ -9,6 +9,11 @@ public class Button_Script : MonoBehaviour
         ServiceLocator.SceneManager.LoadSceneByName("MainMenu");
     }
 
+    public void StartGame()
+    {
+        ServiceLocator.SceneManager.LoadSceneByName("GameScene");
+    }
+
     public void winScene()
     {
         ServiceLocator.SceneManager.LoadSceneByName("WinScene");
