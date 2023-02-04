@@ -9,15 +9,24 @@ public class Nibbleable_Object : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     [SerializeField] int currentHealth;
     [SerializeField] GameObject manager;
+    [SerializeField] List<ParticleSystem> PE;
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager");
         currentHealth = maxHealth;
+        for(int i = 0; i < this.transform.childCount; i++)
+        {
+            PE.Add(this.transform.GetChild(i).GetComponent<ParticleSystem>());
+        }
     }
     private void Update()
     {
         if (currentHealth <= 0)
         {
+            for(int i = 0; i < PE.Count; i++)
+            {
+                PE[i].Play();
+            }
             canNibble = false;
             manager.GetComponent<Plant_Manager>().removePlant(this.gameObject);
             Object.Destroy(this.gameObject, 1);
