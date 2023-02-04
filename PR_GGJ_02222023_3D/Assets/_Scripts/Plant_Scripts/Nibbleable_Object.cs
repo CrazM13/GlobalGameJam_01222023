@@ -38,6 +38,11 @@ public class Nibbleable_Object : MonoBehaviour
         }
     }
 
+    public void resetFarmerHP()
+    {
+        currentHealth = maxHealth;
+    }
+
     public void gettingNibbled(int attack)
     {
         if (canNibble == true)
