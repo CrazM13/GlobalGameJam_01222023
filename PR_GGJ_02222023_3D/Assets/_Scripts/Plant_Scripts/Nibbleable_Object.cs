@@ -59,7 +59,7 @@ public class Nibbleable_Object : MonoBehaviour
                     PE[i].Play();
                 }
                 canNibble = false;
-                this.gameObject.SetActive(false);
+                //this.gameObject.SetActive(false);
 				manager.GetComponent<Plant_Manager>().removePlant(this.gameObject);
 				Object.Destroy(this.gameObject, 1);
             }
