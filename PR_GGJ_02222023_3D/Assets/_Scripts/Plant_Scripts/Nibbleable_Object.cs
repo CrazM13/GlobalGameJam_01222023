@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Nibbleable_Object : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Nibbleable_Object : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] GameObject manager;
     [SerializeField] List<ParticleSystem> PE;
+    public UnityEvent OnNibbleStart { get; set; } = new UnityEvent();
+    public UnityEvent OnNibbleContinue { get; set; } = new UnityEvent();
+    public UnityEvent OnNibbleEnd { get; set; } = new UnityEvent();
+
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager");
@@ -37,9 +42,22 @@ public class Nibbleable_Object : MonoBehaviour
     {
         if (canNibble == true)
         {
+            if (currentHealth == maxHealth)
+            {
+                OnNibbleStart.Invoke();
+            }
+            else if (currentHealth < maxHealth && currentHealth > 0)
+            {
+                OnNibbleContinue.Invoke();
+            }
             currentHealth = currentHealth - attack;
             if (currentHealth <= 0)
             {
+                OnNibbleEnd.Invoke();
+                for (int i = 0; i < PE.Count; i++)
+                {
+                    PE[i].Play();
+                }
                 canNibble = false;
                 this.gameObject.SetActive(false);
 				manager.GetComponent<Plant_Manager>().removePlant(this.gameObject);
