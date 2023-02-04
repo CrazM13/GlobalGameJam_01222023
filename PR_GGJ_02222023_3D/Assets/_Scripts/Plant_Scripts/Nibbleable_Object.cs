@@ -49,7 +49,10 @@ public class Nibbleable_Object : MonoBehaviour
                 if(PE.Count > 0) {
                     for (int i = 0; i < PE.Count; i++)
                     {
-                        PE[i].Play();
+                        if (PE[i] != null)
+                        {
+                            PE[i].Play();
+                        }
                     }
                 }
                 canNibble = false;
