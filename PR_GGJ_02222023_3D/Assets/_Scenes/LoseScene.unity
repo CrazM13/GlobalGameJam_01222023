@@ -15424,7 +15424,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 168988146}
         m_TargetAssemblyTypeName: Button_Script, Assembly-CSharp
-        m_MethodName: winScene
+        m_MethodName: SendToWebsite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

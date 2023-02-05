@@ -38,4 +38,9 @@ public class Button_Script : MonoBehaviour
     {
         Application.Quit();
     }
+
+	public void SendToWebsite()
+	{
+		Application.OpenURL("https://pixel-raven.itch.io/");
+	}
 }
