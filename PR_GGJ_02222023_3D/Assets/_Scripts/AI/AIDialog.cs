@@ -24,7 +24,8 @@ public class AIDialog : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start() {
-		targetEnemy.OnStateChange.AddListener(OnStateChange);
+		if (targetEnemy) targetEnemy.OnStateChange.AddListener(OnStateChange);
+		else isIdle = true;
 		timeUntilIdleLine = idleLineDelay * Random.Range(1, 1.4f);
 	}
 
