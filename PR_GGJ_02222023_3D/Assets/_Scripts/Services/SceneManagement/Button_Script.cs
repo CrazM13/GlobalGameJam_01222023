@@ -33,4 +33,9 @@ public class Button_Script : MonoBehaviour
     {
         ServiceLocator.SceneManager.LoadSceneByName("HowToPlay");
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
