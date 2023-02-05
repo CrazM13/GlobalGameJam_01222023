@@ -19552,6 +19552,7 @@ GameObject:
   - component: {fileID: 923867437}
   - component: {fileID: 923867436}
   - component: {fileID: 923867435}
+  - component: {fileID: 923867440}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -19686,6 +19687,45 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 15}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &923867440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923867434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!4 &927298120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1929191501898975593, guid: 4c3f361bda16deb43a1bb05fb5700fd3,
@@ -30709,6 +30749,7 @@ GameObject:
   - component: {fileID: 1488482599}
   - component: {fileID: 1488482601}
   - component: {fileID: 1488482600}
+  - component: {fileID: 1488482602}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -30835,6 +30876,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488482598}
   m_CullTransparentMesh: 1
+--- !u!114 &1488482602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488482598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3a3ede559a53c45b28b6aeb5108810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.1
+  offset: 0
 --- !u!4 &1489649068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
@@ -31542,6 +31622,7 @@ GameObject:
   - component: {fileID: 1535500294}
   - component: {fileID: 1535500293}
   - component: {fileID: 1535500292}
+  - component: {fileID: 1535500296}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -31676,6 +31757,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535500290}
   m_CullTransparentMesh: 1
+--- !u!114 &1535500296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535500290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!1 &1539260570
 GameObject:
   m_ObjectHideFlags: 0
@@ -31689,6 +31809,7 @@ GameObject:
   - component: {fileID: 1539260574}
   - component: {fileID: 1539260573}
   - component: {fileID: 1539260572}
+  - component: {fileID: 1539260576}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -31823,6 +31944,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539260570}
   m_CullTransparentMesh: 1
+--- !u!114 &1539260576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539260570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!1001 &1540021338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38164,6 +38324,7 @@ GameObject:
   - component: {fileID: 1841918892}
   - component: {fileID: 1841918891}
   - component: {fileID: 1841918890}
+  - component: {fileID: 1841918894}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -38298,6 +38459,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841918888}
   m_CullTransparentMesh: 1
+--- !u!114 &1841918894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841918888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!4 &1842153978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
