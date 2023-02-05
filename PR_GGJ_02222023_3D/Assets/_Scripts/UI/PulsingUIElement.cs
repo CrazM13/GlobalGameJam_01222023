@@ -12,6 +12,8 @@ public class PulsingUIElement : MonoBehaviour {
 
 	private Vector3 scale;
 
+	private bool isPlaying = true;
+
 	public float Speed {
 		get => speed;
 		set => speed = value;
@@ -27,8 +29,21 @@ public class PulsingUIElement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		timer = (timer + (Time.deltaTime * Speed)) % 1;
+		if (isPlaying) {
+			timer = (timer + (Time.deltaTime * Speed)) % 1;
 
-		transform.localScale = scale * (1 + (pulse.Evaluate(timer) * strength));
+			transform.localScale = scale * (1 + (pulse.Evaluate(timer) * strength));
+		} else if (timer != 0) {
+			timer = 0;
+			transform.localScale = scale * (1 + (pulse.Evaluate(timer) * strength));
+		}
+	}
+
+	public void Play() {
+		isPlaying = true;
+	}
+
+	public void Stop() {
+		isPlaying = false;
 	}
 }
