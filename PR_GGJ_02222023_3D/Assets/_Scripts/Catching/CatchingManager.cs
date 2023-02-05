@@ -16,7 +16,7 @@ public class CatchingManager {
 	public bool IsLastLife => currentLife >= maxLives || Completion >= 0.75f;
 
 	public int RemainingLives => maxLives - currentLife;
-	public int CurrentLife => currentLife;
+	public int CurrentLife => IsLastLife ? maxLives - 1 : currentLife;
 
 	public UnityEvent<CatchingManager> OnPlayerCaught { get; set; } = new UnityEvent<CatchingManager>();
 

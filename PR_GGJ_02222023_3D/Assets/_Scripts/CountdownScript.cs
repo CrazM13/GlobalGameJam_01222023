@@ -24,13 +24,18 @@ public class CountdownScript : MonoBehaviour
         if (timer >= 0.0f && canCount)
         {
             timer -= Time.deltaTime;
-            wiText.text = timer.ToString("F");
+
+			int minutes = Mathf.FloorToInt(timer / 60);
+			int seconds = Mathf.FloorToInt(timer % 60);
+
+
+			wiText.text = $"{minutes:D2}:{seconds:D2}";
         }
         else if (timer <= 0.0f && !doOnce)
         {
             canCount = false;
             doOnce = true;
-            wiText.text = "0.00";
+            wiText.text = "00:00";
             timer = 0.0f;
         }
     }

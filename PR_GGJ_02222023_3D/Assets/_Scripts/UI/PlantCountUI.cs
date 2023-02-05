@@ -15,7 +15,7 @@ public class PlantCountUI : MonoBehaviour {
 		int total = plantManager.totalPlantCount();
 		int consumed = total - plantManager.remainingPlantCount();
 
-		consumedPlants.text = consumed.ToString("D2");
-		totalPlants.text = total.ToString("D2");
+		consumedPlants.text = consumed.ToString("D3");
+		totalPlants.text = total.ToString("D3");
 	}
 }

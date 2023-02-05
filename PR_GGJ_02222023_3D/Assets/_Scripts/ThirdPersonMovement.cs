@@ -11,7 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
 
-    public Text pauseLabel;
+    public TMPro.TMP_Text pauseLabel;
     public static bool isPaused;
     float previousTimescale = 1;
     public AudioSource audioSource;
