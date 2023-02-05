@@ -11463,6 +11463,7 @@ GameObject:
   - component: {fileID: 487315976}
   - component: {fileID: 487315975}
   - component: {fileID: 487315974}
+  - component: {fileID: 487315978}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -11549,7 +11550,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1467630862}
         m_TargetAssemblyTypeName: Button_Script, Assembly-CSharp
-        m_MethodName: quitGame
+        m_MethodName: howToPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11597,6 +11598,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487315972}
   m_CullTransparentMesh: 1
+--- !u!114 &487315978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487315972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!4 &487322365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8081492780149899820, guid: f080ef8fb9318094a8916d4198479d4d,
@@ -11943,6 +11983,7 @@ GameObject:
   - component: {fileID: 507034940}
   - component: {fileID: 507034942}
   - component: {fileID: 507034941}
+  - component: {fileID: 507034943}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -12068,6 +12109,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507034939}
   m_CullTransparentMesh: 1
+--- !u!114 &507034943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507034939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3a3ede559a53c45b28b6aeb5108810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.1
+  offset: 0
 --- !u!4 &509503844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6277657339652722196, guid: 46aa6afee51b46548a634b4819bb39b1,
@@ -16237,6 +16317,7 @@ GameObject:
   - component: {fileID: 738623329}
   - component: {fileID: 738623328}
   - component: {fileID: 738623327}
+  - component: {fileID: 738623331}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -16323,7 +16404,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1467630862}
         m_TargetAssemblyTypeName: Button_Script, Assembly-CSharp
-        m_MethodName: quitGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16371,6 +16452,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738623325}
   m_CullTransparentMesh: 1
+--- !u!114 &738623331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738623325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!1001 &739966060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25663,6 +25783,7 @@ GameObject:
   - component: {fileID: 1198713974}
   - component: {fileID: 1198713973}
   - component: {fileID: 1198713972}
+  - component: {fileID: 1198713976}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -25797,6 +25918,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198713970}
   m_CullTransparentMesh: 1
+--- !u!114 &1198713976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198713970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!4 &1202225973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1929191501898975593, guid: 4c3f361bda16deb43a1bb05fb5700fd3,
@@ -31710,6 +31870,7 @@ GameObject:
   - component: {fileID: 1467630864}
   - component: {fileID: 1467630863}
   - component: {fileID: 1467630862}
+  - component: {fileID: 1467630866}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -31844,6 +32005,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467630860}
   m_CullTransparentMesh: 1
+--- !u!114 &1467630866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467630860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88db0a5faf62f4baff75c3089f3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  strength: 0.1
+  speed: 0.75
+  offset: 0
 --- !u!1001 &1469291624
 PrefabInstance:
   m_ObjectHideFlags: 0
